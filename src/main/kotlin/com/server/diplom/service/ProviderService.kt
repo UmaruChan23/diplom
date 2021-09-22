@@ -23,8 +23,4 @@ class ProviderService(@Autowired val repo: ProvidersRepo) {
         repo.save(provider)
     }
 
-    fun addProduct(id: Int, product: Product) {
-        val provider = repo.getById(id)
-        provider
-    }
 }

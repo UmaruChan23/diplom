@@ -1,13 +1,13 @@
 package com.server.diplom.controller
 
-import com.server.diplom.entity.Product
 import com.server.diplom.entity.Provider
 import com.server.diplom.service.ProductService
 import com.server.diplom.service.ProviderService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
-@RestController
+@Controller
 @RequestMapping("/providers")
 class ProvidersController(  @Autowired val service: ProviderService,
                             @Autowired val productService: ProductService) {
