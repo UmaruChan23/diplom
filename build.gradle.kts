@@ -51,7 +51,7 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "com.server.diplom.DiplomApplication.kt"
+        attributes["Main-Class"] = "com.server.diplom.DiplomApplication"
     }
 }
 
