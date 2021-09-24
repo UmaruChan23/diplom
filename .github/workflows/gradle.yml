@@ -42,7 +42,7 @@ jobs:
     with:
       registry: registry.heroku.com
       Username: f.matorin@mail.ru
-      Password: ${{ srcret.HEROKU_API_KEY }}
+      Password: ${{ secret.HEROKU_API_KEY }}
     
   - name: Build and push docker container
     uses: docker/build-push-action@v2
