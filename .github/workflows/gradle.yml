@@ -49,4 +49,4 @@ jobs:
     with:
       context: ${{ env.DOCKER_CONTEXT }}
       push: true
-      tags: ${{GITHUB_SHA_SHORT}}-${{GITHUB_REF_SLUG}}
+      tags: ${{ env.GITHUB_SHA_SHORT }}-${{ env.GITHUB_REF_SLUG }}
