@@ -29,6 +29,9 @@ jobs:
  heroku:
   needs: build
   runs-on: ubuntu-latest
+  env:
+    DOCKER_REGISTRY: heroku_registry
+    MAIN_DOCKER_IMAGE_NAME: server
   
   steps:
   
@@ -49,4 +52,4 @@ jobs:
     with:
       context: ${{ env.DOCKER_CONTEXT }}
       push: true
-      tags: ${{ env.GITHUB_SHA_SHORT }}:${{ env.GITHUB_REF_SLUG }}
+      tags: ${{ env.DOCKER_REGISTRY }}/${{ env.MAIN_DOCKER_IMAGE_NAME }}:${{ env.GITHUB_SHA_SHORT }}-${{ env.GITHUB_REF_SLUG }}
