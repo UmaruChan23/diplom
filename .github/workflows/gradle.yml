@@ -25,6 +25,8 @@ jobs:
         name: server
         path: build/libs/*.jar
         retention-days: 5
+    - name: 'find'
+      run: ls -la
   
  heroku:
   needs: build
