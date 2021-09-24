@@ -30,8 +30,8 @@ jobs:
   needs: build
   runs-on: ubuntu-latest
   env:
-    DOCKER_REGISTRY: heroku_registry
-    MAIN_DOCKER_IMAGE_NAME: server
+    DOCKER_REGISTRY: registry.heroku.com
+    MAIN_DOCKER_IMAGE_NAME: license-diplom
   
   steps:
   
