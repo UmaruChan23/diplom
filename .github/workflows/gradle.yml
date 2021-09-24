@@ -58,3 +58,7 @@ jobs:
       context: ${{ env.DOCKER_CONTEXT }}
       push: true
       tags: ${{ env.DOCKER_REGISTRY }}/${{ env.MAIN_DOCKER_IMAGE_NAME }}:${{ env.GITHUB_SHA_SHORT }}-${{ env.GITHUB_REF_SLUG }}
+  - name: Release
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
