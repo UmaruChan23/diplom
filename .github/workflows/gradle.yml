@@ -50,7 +50,7 @@ jobs:
     uses: docker/login-action@v1
     with:
       #registry: hub.docker.com
-      Username: UmaruChan23
+      Username: umaruchan23
       Password: ${{ secrets.DOCKER_KEY }}
     
   - name: Build and push docker container
