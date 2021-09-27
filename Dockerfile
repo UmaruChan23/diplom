@@ -2,6 +2,6 @@ FROM openjdk:15-alpine
 
 WORKDIR /opt
 
-COPY /*.jar /opt/diplom.jar
+COPY /home/runner/work/diplom/diplom/build/libs/diplom-0.0.1-SNAPSHOT.jar /opt/diplom.jar
 
 ENTRYPOINT java -Xmx2G -jar /opt/diplom.jar
