@@ -1,7 +1,5 @@
 FROM openjdk:15-alpine
 
-WORKDIR /opt
-
 COPY /*.jar /opt/diplom.jar
 
 RUN ls -lah ../
