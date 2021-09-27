@@ -7,4 +7,4 @@ ENV PORT 5000
 
 EXPOSE $PORT
 
-CMD java -Xmx2G -jar /opt/diplom.jar
+CMD java -Dserver.port=${PORT} -Xmx2G -jar /opt/diplom.jar
