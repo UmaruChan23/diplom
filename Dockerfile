@@ -4,6 +4,6 @@ WORKDIR /opt
 
 COPY /*.jar /opt/diplom.jar
 
-RUN ls -lah /
+RUN ls -lah /home
 
 ENTRYPOINT java -Xmx2G -jar /opt/diplom.jar
