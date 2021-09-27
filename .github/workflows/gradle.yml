@@ -44,6 +44,7 @@ jobs:
     uses: actions/download-artifact@v2
     with:
       name: server
+      path: /artifact
       
   - name: Login to Heroku Container registry
     uses: docker/login-action@v1
@@ -58,6 +59,7 @@ jobs:
       context: ${{ env.DOCKER_CONTEXT }}
       push: true
       tags: registry.heroku.com/license-diplom/web
+      working_directory: /artifact
   - name: Release
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
