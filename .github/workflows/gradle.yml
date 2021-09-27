@@ -36,8 +36,6 @@ jobs:
     MAIN_DOCKER_IMAGE_NAME: license-diplom
   
   steps:
-  - name: Mkdir /artifact
-    run: ~/artifact
   
   - name: Inject slug/short variables
     uses: rlespinasse/github-slug-action@v3.x
@@ -46,7 +44,7 @@ jobs:
     uses: actions/download-artifact@v2
     with:
       name: server
-      path: ~/artifact
+      path: /
       
   - name: Login to Heroku Container registry
     uses: docker/login-action@v1
@@ -61,7 +59,7 @@ jobs:
       context: ${{ env.DOCKER_CONTEXT }}
       push: true
       tags: registry.heroku.com/license-diplom/web
-      working_directory: /artifact
+
   - name: Release
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
