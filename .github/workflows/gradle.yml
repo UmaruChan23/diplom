@@ -36,6 +36,8 @@ jobs:
     MAIN_DOCKER_IMAGE_NAME: license-diplom
   
   steps:
+  - name: Mkdir /artifact
+    run: mkdir /artifact
   
   - name: Inject slug/short variables
     uses: rlespinasse/github-slug-action@v3.x
