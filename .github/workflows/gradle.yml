@@ -26,7 +26,7 @@ jobs:
         path: build/libs/*.jar
         retention-days: 5
     - name: 'find'
-      run: ls -lah /home/runner/work/diplom/diplom
+      run: ls -lah /home/runner/work/diplom/diplom/build/libs
   
  heroku:
   needs: build
