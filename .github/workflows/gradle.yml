@@ -37,7 +37,7 @@ jobs:
   
   steps:
   - name: Mkdir /artifact
-    run: mkdir /artifact
+    run: ~/artifact
   
   - name: Inject slug/short variables
     uses: rlespinasse/github-slug-action@v3.x
