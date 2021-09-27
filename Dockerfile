@@ -2,7 +2,7 @@ FROM openjdk:15-alpine
 
 WORKDIR /opt
 
-COPY /home/runner/work/diplom/diplom/build/libs/*.jar /opt/diplom.jar
+COPY /*.jar /opt/diplom.jar
 
 RUN ls -lah /home/runner/work/diplom/diplom/
 RUN ls -lah /
