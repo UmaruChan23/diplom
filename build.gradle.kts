@@ -49,12 +49,6 @@ tasks.withType<KotlinCompile> {
     }
 }
 
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.server.diplom.DiplomApplication"
-    }
-}
-
 tasks.withType<Test> {
     useJUnitPlatform()
 }
