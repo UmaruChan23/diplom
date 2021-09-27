@@ -30,7 +30,7 @@ jobs:
   needs: build
   runs-on: ubuntu-latest
   env:
-    #DOCKER_REGISTRY: registry.heroku.com
+    DOCKER_REGISTRY: registry.heroku.com
     MAIN_DOCKER_IMAGE_NAME: license-diplom
   
   steps:
@@ -49,16 +49,16 @@ jobs:
   - name: Login to Heroku Container registry
     uses: docker/login-action@v1
     with:
-      #registry: hub.docker.com
-      Username: umaruchan23
-      Password: ${{ secrets.DOCKER_KEY }}
+      registry: registry.heroku.com
+      Username: f.matorin@mail.ru
+      Password: ${{ secrets.HEROKU_API_KEY }}
     
   - name: Build and push docker container
     uses: docker/build-push-action@v2
     with:
       context: .
       push: true
-      tags: umaruchan23/diplom:tagname
+      tags: registry.heroku.com/license-diplom/web
 
   - name: Release
     env:
