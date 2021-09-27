@@ -16,7 +16,6 @@ import javax.persistence.PersistenceContext
 
 @Service
 class UserService(@Autowired val userRepository: UserRepo,
-                  @Autowired val bCryptPasswordEncoder: BCryptPasswordEncoder,
                   @PersistenceContext private val em: EntityManager) : UserDetailsService {
 
     @Throws(UsernameNotFoundException::class)
@@ -39,7 +38,7 @@ class UserService(@Autowired val userRepository: UserRepo,
             return false
         }
         user.setRoles(Collections.singleton(Role(1L, "ROLE_USER")))
-        user.password = bCryptPasswordEncoder.encode(user.password)
+        //user.password = bCryptPasswordEncoder.encode(user.password)
         userRepository.save(user)
         return true
     }
