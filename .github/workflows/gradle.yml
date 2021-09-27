@@ -35,6 +35,9 @@ jobs:
   
   steps:
   
+  - name: Checkout repo
+    uses: actions/checkout@v1
+  
   - name: Inject slug/short variables
     uses: rlespinasse/github-slug-action@v3.x
   
