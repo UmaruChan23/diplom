@@ -8,7 +8,7 @@ class DiplomApplicationTests {
 
     @Test
     fun contextLoads() {
-        throw Exception("Hi There!")
+
     }
 
 }
