@@ -20,11 +20,8 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter:2.5.4")
     implementation("org.springframework.boot:spring-boot-starter-web:2.5.4")
-    implementation("org.springframework.boot:spring-boot-starter-security:2.5.4")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.5.4")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.4")
-
-    implementation("org.springframework.security:spring-security-taglibs:5.5.2")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -32,8 +29,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5")
 
     implementation("org.postgresql:postgresql:42.2.23.jre7")
-
-    implementation("javax.validation:validation-api:2.0.1.Final")
 
     implementation("org.apache.logging.log4j:log4j-core:2.14.1")
     implementation("org.apache.logging.log4j:log4j-api:2.14.1")
