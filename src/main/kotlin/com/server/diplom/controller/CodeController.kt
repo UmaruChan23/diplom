@@ -1,16 +1,19 @@
 package com.server.diplom.controller
 
-import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import kotlin.random.Random
 
 @RestController
 class CodeController {
 
     @GetMapping("/code")
-    fun getRandomCode(): Int {
-        val code = Random.nextInt()
+    fun getRandomCode(): String {
+        val code = randomID()
         return code
     }
+
+    private fun randomID(): String = List(5) {
+        List(4) { (('a'..'z') + ('A'..'Z') + ('0'..'9')).random()
+        }.joinToString("")
+    }.joinToString("-")
 }
