@@ -7,7 +7,12 @@ import javax.persistence.*
 data class Product(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long = 0,
+    private val id: Long,
 
-    val name: String = ""
+    val name: String = "",
+
+    val isBlocked: Boolean = false
 )
+{
+    fun getId(): Long { return id }
+}

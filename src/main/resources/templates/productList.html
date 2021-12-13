@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/html">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список продуктов</title>
+</head>
+<body>
+    <div class = "productTable">
+        <table>
+            <thead>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${products.empty}">
+                <td colspan="2"> No products Available </td>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td><span th:text="${product.id}"> ID </span></td>
+                <td><span th:text="${product.name}"> Name </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class = "addProduct">
+        <form method="post" th:action="@{/products/add}" th:object="${productTemplate}">
+            <input id="Имя" placeholder="Ключ" required type="text" th:field="*{name}"/> <br>
+            <input id="submit" type="submit" value="Добавить">
+        </form>
+    </div>
+</body>
+</html>

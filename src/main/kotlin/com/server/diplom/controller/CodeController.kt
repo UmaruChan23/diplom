@@ -1,19 +1,26 @@
 package com.server.diplom.controller
 
-import org.springframework.web.bind.annotation.GetMapping
+import com.server.diplom.entity.License
+import com.server.diplom.service.LicenseService
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class CodeController {
+class CodeController(@Autowired private val service: LicenseService) {
 
-    @GetMapping("/code")
-    fun getRandomCode(): String {
-        val code = randomID()
-        return code
+    @PostMapping("/code")
+    fun createLicense(@RequestBody license: License): String {
+        return service.save(license)
     }
 
-    private fun randomID(): String = List(5) {
-        List(4) { (('a'..'z') + ('A'..'Z') + ('0'..'9')).random()
-        }.joinToString("")
-    }.joinToString("-")
+    @PostMapping("/activate")
+    fun activateLicense(@RequestBody code: String): License?{
+        //Как подписать объект?
+        //Добавить поле?
+        //Возвращать другой тип?
+        return service.getByCode(code)
+    }
+
 }
